@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>口林 · 语料与词条</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scan"></div>
+<div class="wrap">
+
+  <header class="head">
+    <aside class="side">
+      <img src="assets/koulin-trim.png" alt="口林">
+    </aside>
+    <div class="who">
+      <h1>口林</h1>
+      <p class="tagline" id="tagline">所有指向自身的信息</p>
+      <p class="intro" id="intro"></p>
+      <div class="facts" id="facts"></div>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button data-tab="corpus" class="on">语料</button>
+    <button data-tab="docs">信件</button>
+    <button data-tab="terms">词条</button>
+    <button data-tab="cls">分类</button>
+    <button data-tab="about">关于</button>
+    <button id="sizeBtn" title="字号：小 12 / 中 18 / 大 24">字号：中</button>
+  </nav>
+
+  <div class="searchbar">
+    <input id="q" type="search" placeholder="搜：累 ／ 妈妈 ／ 大肥鱼 ／ 宝贝 ／ 她不是口林" autocomplete="off">
+    <span class="stat" id="stat"></span>
+  </div>
+
+  <div class="frame">
+    <aside class="nav">
+      <h3>分类目录</h3>
+      <div id="navlist"></div>
+    </aside>
+
+    <main id="main"></main>
+
+    <aside class="meta">
+      <div class="box">
+        <h3>统计</h3>
+        <div class="kv" id="stats"></div>
+      </div>
+      <div class="box">
+        <h3>随机一句</h3>
+        <button class="tiny" id="randBtn">从她的字里抽一条</button>
+        <p class="rand" id="randtext"></p>
+      </div>
+      <div class="box">
+        <h3>待补</h3>
+        <p class="tiny" id="missinfo">0 条</p>
+        <a class="tiny" href="#missing">看看缺什么 ↓</a>
+      </div>
+      <div class="box legend">
+        <h3>怎么读</h3>
+        <p><span class="no">410.01</span> 是索书号</p>
+        <p>大类 ／ 分区 ／ 细目</p>
+        <p><a href="#/cls">分类表 →</a></p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="missing" id="missing">
+    <h2>她没接住的话 <span class="count" id="missCount"></span></h2>
+    <p class="hint">在搜索框里敲一句她答不上来的话，回车就会记在这里。这些就是下一批要补的语料。</p>
+    <ul id="missList"></ul>
+    <div class="miss-actions">
+      <button id="missIssue">提交到 Issue</button>
+      <button id="missExport">导出 JSON</button>
+      <button id="missClear">清空</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>内容来自 <code>data/</code> 下的五个文件：语料、信件、词条、分类、设定。<br>
+    改它们，页面和桌宠就同时更新了。</p>
+  </footer>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
